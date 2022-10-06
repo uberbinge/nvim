@@ -12,4 +12,4 @@ packer.init({
 -- Plugin management via Packer
 packer.use({ "wbthomason/packer.nvim" })
 
-require("lsp.packages")
+require("plugins.lsp.init")

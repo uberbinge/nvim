@@ -6,6 +6,6 @@ packer.use({
 	"neovim/nvim-lspconfig",
 	config = function()
 		-- Language configs
-		require("lsp.languages_go")
+		require("plugins.lsp.go")
 	end,
 })
