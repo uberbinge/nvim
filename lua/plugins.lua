@@ -13,3 +13,4 @@ packer.init({
 packer.use({ "wbthomason/packer.nvim" })
 
 require("plugins.lsp.init")
+require("plugins.nvim-cmp.init")
