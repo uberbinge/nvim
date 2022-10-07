@@ -14,3 +14,4 @@ packer.use({ "wbthomason/packer.nvim" })
 
 require("plugins.lsp.init")
 require("plugins.nvim-cmp.init")
+require("plugins.neo-tree.init")

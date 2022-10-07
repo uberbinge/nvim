@@ -7,5 +7,6 @@ packer.use({
 	config = function()
 		-- Language configs
 		require("plugins.lsp.go")
+		require("plugins.lsp.lua")
 	end,
 })
