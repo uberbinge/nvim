@@ -208,6 +208,4 @@ packer.use({
 			}
 		})
 	end,
-	vim.keymap.set("n", "<space>t", "<cmd>Neotree toggle=true<CR>", { noremap = true }),
-	vim.keymap.set("n", "<space>f", "<cmd>Neotree action=focus reveal=true<CR>", { noremap = true }),
 })

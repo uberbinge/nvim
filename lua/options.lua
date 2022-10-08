@@ -1,7 +1,6 @@
 local o = vim.opt
 local wo = vim.wo
 local bo = vim.bo
-local api = vim.api
 
 -- global options
 o.hidden = true -- allow hidden buffers
@@ -34,7 +33,7 @@ o.wildignore = [[
 */tmp/*,*.so,*.swp,*.zip,**/node_modules/**,**/target/**,**.terraform/**"
 ]]
 -- api options
-vim.api.nvim_exec ('language en_US', true) -- set english language
+vim.api.nvim_exec("language en_US", true) -- set english language
 
 -- window options
 wo.number = true -- Add line numbers
@@ -44,4 +43,3 @@ bo.expandtab = true -- Expand tabs to spaces per default
 bo.shiftwidth = 2 -- Set default auto-indent width
 bo.softtabstop = 2 -- Set default virtual tabstop width
 bo.tabstop = 2 -- Set default tabstop width
-
