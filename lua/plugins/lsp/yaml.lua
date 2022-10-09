@@ -16,7 +16,7 @@ nvim_lsp.yamlls.setup({
 				["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
 				["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
 				["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-				["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
+				["https://json.schemastore.org/dependabot-2.0"] = ".github/dependabot.{yml,yaml}",
 				["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
 				["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.2-standalone-strict/all.json"] = "**/*.k8s.{yml,yaml}",
 			},

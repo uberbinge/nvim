@@ -37,6 +37,7 @@ packer.use({
 					"%.vim/.*",
 					"node_modules/.*",
 					"%.idea/.*",
+					"vendor/.*",
 					"%.vscode/.*",
 					"%.history/.*",
 					".terraform",
