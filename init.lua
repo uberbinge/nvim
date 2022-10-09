@@ -7,4 +7,3 @@ require("options")
 require("mappings")
 -- Vim autocommands/autogroups
 require("autocmd")
-
