@@ -38,15 +38,16 @@ wk.register({
 			"Close all but the current buffer",
 		},
 		d = { "<cmd>lua MiniBufremove.delete()<CR>", "Close buffer" },
+		f = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer", noremap = true },
+
 	},
 	f = {
 		name = "Files",
-		b = { "<cmd>Telescope file_browser grouped=true<cr>", "File browser" },
+		f = { "<cmd>Telescope find_files grouped=true<cr>", "Find File" },
+		g = { "<cmd>Telescope live_grep<cr>", "Find in File" },
 		p = { "<cmd>Neotree reveal toggle<cr>", "Toggle Filetree" },
-		P = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer", noremap = true },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		s = { "<cmd>w<cr>", "Save Buffer" },
-		z = { "<cmd>Telescope zoxide list<CR>", "Zoxide" },
 	},
 	g = { "Git" },
 	m = {
@@ -61,34 +62,13 @@ wk.register({
 		k = { "<cmd>cprevious<cr>", "Previous Quickfix Item" },
 		q = { "<cmd>lua require('functions').toggle_qf()<cr>", "Toggle quickfix list" },
 	},
-	s = { "Search" },
-	w = { "Windows" },
-	x = {
-		name = "LanguageTool",
-		c = { "<cmd>GrammarousCheck<cr>", "Grammar check" },
-		i = { "<Plug>(grammarous-open-info-window)", "Open the info window" },
-		r = { "<Plug>(grammarous-reset)", "Reset the current check" },
-		f = { "<Plug>(grammarous-fixit)", "Fix the error under the cursor" },
-		x = {
-			"<Plug>(grammarous-close-info-window)",
-			"Close the information window",
-		},
-		e = {
-			"<Plug>(grammarous-remove-error)",
-			"Remove the error under the cursor",
-		},
-		n = {
-			"<Plug>(grammarous-move-to-next-error)",
-			"Move cursor to the next error",
-		},
-		p = {
-			"<Plug>(grammarous-move-to-previous-error)",
-			"Move cursor to the previous error",
-		},
-		d = {
-			"<Plug>(grammarous-disable-rule)",
-			"Disable the grammar rule under the cursor",
-		},
+	s = {
+		name = "Search", -- optional group name
+		f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File", noremap = true },
+		g = { "<cmd>Telescope live_grep<cr>", "Find in File", noremap = true },
+		o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = true },
+		r = { "<cmd>Telescope resume<cr>", "Resume last picker", noremap = true },
+		p = { "<cmd>Telescope pickers<cr>", "List all pickers", noremap = true },
+		b = { "<cmd>Telescope buffers<cr>", "List open buffers", noremap = true },
 	},
-	z = { "Spelling" },
 }, { prefix = "<leader>", mode = "n", default_options })

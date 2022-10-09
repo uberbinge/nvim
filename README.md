@@ -1,6 +1,5 @@
 # neovim
 
-
 ## Required
 
 ```bash
@@ -10,3 +9,9 @@ brew install ripgrep
 ```
 
 ## Acknowledgements
+
+Special Thanks to the following people:
+
+* jan-xyz
+* snowiow
+* allaman

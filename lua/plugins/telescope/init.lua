@@ -18,11 +18,8 @@ packer.use({
 					ignore_current_buffer = true,
 					sort_lastused = true,
 				},
-				-- find_command = { "fd", "--hidden", "--type", "file", "--follow", "--strip-cwd-prefix" },
 			},
 			defaults = {
-				file_ignore_patterns = { "node_modules", ".terraform", "%.jpg", "%.png" },
-				-- used for grep_string and live_grep
 				vimgrep_arguments = {
 					"rg",
 					"--follow",
@@ -34,6 +31,15 @@ packer.use({
 					"--smart-case",
 					"--no-ignore",
 					"--trim",
+				},
+				file_ignore_patterns = {
+					"%.git/.*",
+					"%.vim/.*",
+					"node_modules/.*",
+					"%.idea/.*",
+					"%.vscode/.*",
+					"%.history/.*",
+					".terraform",
 				},
 				mappings = {
 					i = {
