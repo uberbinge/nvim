@@ -26,6 +26,7 @@ local default_options = { silent = true }
 -- Register all leader based mappings
 wk.register({
 	["<Tab>"] = { "<cmd>e#<cr>", "Prev buffer" },
+	["t"] = { "<cmd>ToggleTerm<cr>", "Terminal" },
 	b = {
 		name = "Buffers",
 		b = {
@@ -49,21 +50,15 @@ wk.register({
 	g = { "Git" },
 	m = {
 		name = "Misc",
-		c = { "<cmd>lua require('functions').toggle_colorcolumn()<cr>", "Toggle Colorcolumn" },
-		C = { "<cmd>:CBcatalog<cr>", "Commentbox Catalog" },
 		d = { "<cmd>lua require('functions').toggle_diagnostics()<cr>", "Toggle Diagnostics" },
-		i = { "<cmd>IlluminateToggle<cr>", "Toggle Illuminate" },
-		l = { "<cmd>source ~/.config/nvim/snippets/*<cr>", "Reload snippets" },
 		o = { "Options" },
 		p = { "<cmd>PackerSync --preview<cr>", "PackerSync" },
-		s = { "<cmd>SymbolsOutline<cr>", "Toggle SymbolsOutline" },
 	},
 	q = {
 		name = "Quickfix",
 		j = { "<cmd>cnext<cr>", "Next Quickfix Item" },
 		k = { "<cmd>cprevious<cr>", "Previous Quickfix Item" },
 		q = { "<cmd>lua require('functions').toggle_qf()<cr>", "Toggle quickfix list" },
-		t = { "<cmd>TodoQuickFix<cr>", "Show TODOs" },
 	},
 	s = { "Search" },
 	w = { "Windows" },

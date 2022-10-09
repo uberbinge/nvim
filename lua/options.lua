@@ -1,6 +1,7 @@
 local o = vim.opt
 local wo = vim.wo
 local bo = vim.bo
+local functions = require("functions")
 
 -- global options
 o.hidden = true -- allow hidden buffers

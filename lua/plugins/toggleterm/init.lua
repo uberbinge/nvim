@@ -7,7 +7,6 @@ packer.use({
 	},
 
 	config = function()
-		local wk = require("which-key")
 		require("toggleterm").setup({
 			-- size can be a number or function which is passed the current terminal
 			size = function(term)
@@ -43,20 +42,6 @@ packer.use({
 					background = "Normal",
 				},
 			},
-		})
-		-- keymaps in normal mode
-		wk.register({
-			t = { "<cmd>ToggleTerm<CR>", "Toggle terminal", noremap = true },
-		}, {
-			prefix = "<leader>",
-		})
-
-		-- keymaps in terminal mode
-		wk.register({
-			t = { "<cmd>ToggleTerm<CR>", "Toggle terminal", noremap = true },
-		}, {
-			mode = "t",
-			prefix = "<leader>",
 		})
 	end,
 })

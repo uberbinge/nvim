@@ -11,11 +11,11 @@ api.nvim_create_autocmd("BufWritePre", {
 api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
 -- automatically update vim diagnostics
--- vim.api.nvim_create_augroup("diagnostics", { clear = true })
+vim.api.nvim_create_augroup("diagnostics", { clear = true })
 
---vim.api.nvim_create_autocmd("DiagnosticChanged", {
---	group = "diagnostics",
---	callback = function()
---		vim.aiagnostic.setloclist({ open = false })
---	end,
--- })
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+	group = "diagnostics",
+	callback = function()
+		vim.diagnostic.setloclist({ open = false })
+	end,
+})

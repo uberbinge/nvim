@@ -83,16 +83,13 @@ packer.use({
 				},
 				mappings = {
 					["<cr>"] = "open",
-					["<space>"] = "open",
+					["<space>"] = "",
 					["<esc>"] = "revert_preview",
 					["P"] = { "toggle_preview", config = { use_float = true } },
 					["S"] = "open_split",
 					["s"] = "open_vsplit",
 					["t"] = "open_tabnew",
-					["w"] = {
-						"toggle_node",
-						nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
-					},
+					["w"] = "open",
 					["C"] = "close_node",
 					["z"] = "close_all_nodes",
 					["a"] = {
