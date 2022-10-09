@@ -43,5 +43,6 @@ packer.use({
 				},
 			},
 		})
+		vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true, silent = true }) -- back to normal mode in Terminal
 	end,
 })

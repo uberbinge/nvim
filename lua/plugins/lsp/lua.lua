@@ -5,7 +5,7 @@ packer.use({
 	config = function()
 		local nvim_lsp = require("lspconfig")
 		local lsp = require("functions")
-		local completion = require("plugins.nvim-cmp.init")
+		local cmp = require("plugins.nvim-cmp.init")
 		local opts = {
 			settings = {
 				Lua = {
@@ -37,7 +37,7 @@ packer.use({
 			"force",
 			require("lua-dev").setup({
 				lspconfig = {
-					capabilities = completion.capabilities,
+					capabilities = cmp.capabilities,
 					on_attach = lsp.on_attach,
 					cmd = { "lua-language-server" },
 				},
