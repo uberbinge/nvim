@@ -43,6 +43,7 @@ wk.register({
 		name = "Files",
 		b = { "<cmd>Telescope file_browser grouped=true<cr>", "File browser" },
 		p = { "<cmd>Neotree reveal toggle<cr>", "Toggle Filetree" },
+		P = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer", noremap = true },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		s = { "<cmd>w<cr>", "Save Buffer" },
 		z = { "<cmd>Telescope zoxide list<CR>", "Zoxide" },

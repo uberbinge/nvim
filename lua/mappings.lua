@@ -2,11 +2,6 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { noremap = true, silent = true })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true, silent = true })
-vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, { noremap = true, silent = true })
-
 -- deactivate arrow keys
 vim.keymap.set("n", "<up>", "<nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<left>", "<nop>", { noremap = true, silent = true })
