@@ -1,6 +1,6 @@
 # neovim
 
->My nvim configuration with the aim of not cluttering nvim with plugins unnecessarily and instead improving the core functions of Vim with some Quality of Live plugins.
+>My nvim configuration with the aim of not cluttering nvim with plugins unnecessarily and instead improving the core functions of Vim with some Quality of Life plugins.
 
 ## Required tools
 
