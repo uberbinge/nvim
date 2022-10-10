@@ -43,7 +43,8 @@ wk.register({
 	},
 	f = {
 		name = "Files",
-		f = { "<cmd>Telescope find_files grouped=true<cr>", "Find File" },
+		b = { "<cmd>Telescope file_browser grouped=true<cr>", "File browser" },
+		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		g = { "<cmd>Telescope live_grep<cr>", "Find in File" },
 		p = { "<cmd>Neotree reveal toggle<cr>", "Toggle Filetree" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
