@@ -12,6 +12,9 @@ packer.init({
 -- Plugin management via Packer
 packer.use({ "wbthomason/packer.nvim" })
 
+-- Theme
+require("themes.kanagawa.init")
+-- Additional Plugins, comment to deactivate
 require("plugins.lsp.init")
 require("plugins.nvim-cmp.init")
 require("plugins.neo-tree.init")
