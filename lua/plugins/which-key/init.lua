@@ -37,7 +37,7 @@ wk.register({
 			"<cmd>%bd|e#|bd#<cr>",
 			"Close all but the current buffer",
 		},
-		d = { "<cmd>lua MiniBufremove.delete()<CR>", "Close buffer" },
+		d = { "<cmd>bd<CR>", "Close buffer" },
 		f = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer", noremap = true },
 
 	},
