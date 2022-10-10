@@ -1,5 +1,4 @@
 local packer = require("packer")
-local telescope = require("telescope")
 
 packer.use({
 	"nvim-telescope/telescope.nvim",
