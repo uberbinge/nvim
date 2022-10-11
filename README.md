@@ -19,9 +19,12 @@ brew install ripgrep
 
 ## Plugins
 
+* git
 * lsp
 * neo-tree
-* vim-cmp
+* nvim-autopairs
+* nvim-cmp
+* nvim-treesitter
 * telescope
 * toggleterm
 * which-key
