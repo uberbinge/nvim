@@ -12,8 +12,26 @@ packer.use({
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local action_layout = require("telescope.actions.layout")
+		local fb_actions = require("telescope").extensions.file_browser.actions
 		telescope.setup({
 			extensions = {
+				file_browser = {
+					hijack_netrw = false,
+					hidden = true,
+					mappings = {
+						i = {
+							["<c-n>"] = fb_actions.create,
+							["<c-r>"] = fb_actions.rename,
+							-- ["<c-h>"] = actions.which_key,
+							["<c-h>"] = fb_actions.toggle_hidden,
+							["<c-x>"] = fb_actions.remove,
+							["<c-p>"] = fb_actions.move,
+							["<c-y>"] = fb_actions.copy,
+							["<c-a>"] = fb_actions.select_all,
+						},
+					},
+				},
+
 			},
 			pickers = {
 				find_files = {
