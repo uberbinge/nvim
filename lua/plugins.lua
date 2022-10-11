@@ -17,6 +17,7 @@ require("themes.kanagawa.init")
 -- Additional Plugins, comment to deactivate
 require("plugins.which-key.init")
 require("plugins.lsp.init")
+require("plugins.git.init")
 require("plugins.nvim-cmp.init")
 require("plugins.neo-tree.init")
 require("plugins.toggleterm.init")
