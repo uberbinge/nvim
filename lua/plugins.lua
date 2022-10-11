@@ -15,10 +15,10 @@ packer.use({ "wbthomason/packer.nvim" })
 -- Theme
 require("themes.kanagawa.init")
 -- Additional Plugins, comment to deactivate
+require("plugins.which-key.init")
 require("plugins.lsp.init")
 require("plugins.nvim-cmp.init")
 require("plugins.neo-tree.init")
-require("plugins.which-key.init")
 require("plugins.toggleterm.init")
 require("plugins.telescope.init")
 require("plugins.nvim-treesitter.init")
