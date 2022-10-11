@@ -9,7 +9,7 @@ local gitsigns = require("gitsigns")
 wk.register({
 	g = {
 		name = "Git",
-		J = { function()
+		j = { function()
 			if vim.wo.diff then
 				return "]c"
 			end
@@ -19,7 +19,7 @@ wk.register({
 			return "<Ignore>"
 		end,
 			"Next Hunk", noremap = true },
-		K = { function()
+		k = { function()
 			if vim.wo.diff then
 				return "[c"
 			end
@@ -43,6 +43,8 @@ wk.register({
 		S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer", noremap = true },
 		p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk", noremap = true },
 		i = { "<cmd>Gitsigns toggle_deleted<CR>", "Toggle deleted", noremap = true },
+		b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle Blame", noremap = true },
+		g = { "<cmd>Neogit<CR>", "Toggle Neogit", noremap = true },
 	},
 }, {
 	mode = "n",
