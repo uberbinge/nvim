@@ -38,7 +38,6 @@ packer.use({
 				r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 				s = { "<cmd>w<cr>", "Save Buffer" },
 			},
-			g = { "Git" },
 			m = {
 				name = "Misc",
 				d = { "<cmd>lua require('functions').toggle_diagnostics()<cr>", "Toggle Diagnostics" },
