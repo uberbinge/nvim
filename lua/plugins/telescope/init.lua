@@ -16,7 +16,7 @@ packer.use({
 		telescope.setup({
 			extensions = {
 				file_browser = {
-					hijack_netrw = false,
+					hijack_netrw = true,
 					hidden = true,
 					mappings = {
 						i = {
