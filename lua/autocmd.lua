@@ -8,6 +8,7 @@ api.nvim_create_autocmd("BufWritePre", {
 	group = TrimWhiteSpaceGrp,
 })
 
+-- Toggle relative line numbers in normal mode
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
 	pattern = "*",
 	group = augroup,
@@ -17,7 +18,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "Cmdline
 		end
 	end,
 })
-
+-- toggle absolute line numbers in insert mode
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEnter", "WinLeave" }, {
 	pattern = "*",
 	group = augroup,
