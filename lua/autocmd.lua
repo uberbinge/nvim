@@ -34,9 +34,8 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
 api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
 -- automatically update vim diagnostics
-vim.api.nvim_create_augroup("diagnostics", { clear = true })
-
-vim.api.nvim_create_autocmd("DiagnosticChanged", {
+api.nvim_create_augroup("diagnostics", { clear = true })
+api.nvim_create_autocmd("DiagnosticChanged", {
 	group = "diagnostics",
 	callback = function()
 		vim.diagnostic.setloclist({ open = false })

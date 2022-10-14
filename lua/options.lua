@@ -1,7 +1,6 @@
 local o = vim.opt
 local wo = vim.wo
 local bo = vim.bo
-local functions = require("functions")
 
 -- global options
 o.hidden = true -- allow hidden buffers
@@ -20,6 +19,10 @@ o.history = 500 -- Use the 'history' option to set the number of lines from comm
 o.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 o.fileencoding = "utf-8" -- the encoding written to a file
 o.wildignorecase = true -- When set case is ignored when completing file names and directories
+o.termguicolors = true -- set term gui colors (most terminals support this)
+o.cursorline = true -- highlight the current line
+o.scrolloff = 3 -- Minimal number of screen lines to keep above and below the cursor
+o.sidescrolloff = 5 -- The minimal number of columns to scroll horizontally
 o.wildignore = [[
 .git,.hg,.svn
 *.aux,*.out,*.toc
