@@ -2,11 +2,12 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
--- deactivate arrow keys
+-- deactivate arrow keys and esc
 vim.keymap.set("n", "<up>", "<nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<left>", "<nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<right>", "<nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<down>", "<nop>", { noremap = true, silent = true })
+
 -- cycle through buffers
 vim.keymap.set("n", "[b", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "]b", ":bnext<CR>", { noremap = true, silent = true })
