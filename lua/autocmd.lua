@@ -1,5 +1,5 @@
 local api = vim.api
-local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
+local augroup = vim.api.nvim_create_augroup("numbertoggle", { clear = true })
 
 --- Remove all trailing whitespace on save
 local TrimWhiteSpaceGrp = api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })

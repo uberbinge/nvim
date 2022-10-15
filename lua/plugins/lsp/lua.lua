@@ -6,7 +6,14 @@ packer.use({
 		local nvim_lsp = require("lspconfig")
 		local lsp = require("functions")
 		local cmp = require("plugins.nvim-cmp.init")
-		local opts = {
+
+		-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+		require("neodev").setup({})
+
+		nvim_lsp.sumneko_lua.setup({
+			cmd = { "lua-language-server" },
+			capabilities = cmp.capabilities,
+			on_attach = lsp.on_attach,
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -32,14 +39,6 @@ packer.use({
 					},
 				},
 			},
-		}
-		require("neodev").setup({
-			lspconfig = {
-				capabilities = cmp.capabilities,
-				on_attach = lsp.on_attach,
-				cmd = { "lua-language-server" },
-			},
 		})
-		nvim_lsp.sumneko_lua.setup(opts)
 	end,
 }) -- LSP server extensions for Lua

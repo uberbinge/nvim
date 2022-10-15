@@ -21,6 +21,7 @@ brew install ripgrep
 
 * git
 * lsp
+* lualine
 * neo-tree
 * nvim-autopairs
 * nvim-cmp
@@ -33,7 +34,7 @@ brew install ripgrep
 
 Special Thanks to the following people:
 
-* jan-xyz (for giving me an introduction to `nvim`)
-* snowiow (for making me not giving up on learning `vim`)
-* allaman
-* alvaroaleman
+* @jan-xyz (for giving me an introduction to `nvim`)
+* @snowiow (for making me not giving up on learning `vim`)
+* @alvaroaleman (for sharing your dotfiles with me :D)
+* @allaman
