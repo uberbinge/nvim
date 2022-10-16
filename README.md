@@ -7,11 +7,11 @@
 ```bash
 # LSP
 brew install gopls
-brew install lua-language-server
-npm install -g typescript typescript-language-server
-npm install -g dockerfile-language-server-nodejs
-brew install yaml-language-server
 brew install hashicorp/tap/terraform-ls
+brew install lua-language-server
+brew install yaml-language-server
+npm install -g dockerfile-language-server-nodejs
+npm install -g typescript typescript-language-server
 
 # tools
 brew install ripgrep
@@ -34,7 +34,7 @@ brew install ripgrep
 
 Special Thanks to the following people:
 
+* @allaman
+* @alvaroaleman (for sharing your dotfiles with me :D)
 * @jan-xyz (for giving me an introduction to `nvim`)
 * @snowiow (for making me not giving up on learning `vim`)
-* @alvaroaleman (for sharing your dotfiles with me :D)
-* @allaman
