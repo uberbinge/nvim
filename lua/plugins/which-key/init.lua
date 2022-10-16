@@ -31,7 +31,8 @@ packer.use({
 			},
 			f = {
 				name = "Files",
-				b = { "<cmd>Telescope file_browser grouped=true<cr>", "File browser" },
+				b = { "<cmd>Telescope file_browser grouped=true cwd=~/workspace<cr>", "File browser" },
+				a = { "<cmd>Telescope git_files<cr>", "Find Git File" },
 				f = { "<cmd>Telescope find_files<cr>", "Find File" },
 				g = { "<cmd>Telescope live_grep<cr>", "Find in File" },
 				p = { "<cmd>Neotree reveal toggle<cr>", "Toggle Filetree" },
