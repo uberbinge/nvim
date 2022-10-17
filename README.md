@@ -2,6 +2,10 @@
 
 >My nvim configuration with the aim of not cluttering nvim with plugins unnecessarily and instead improving the core functions of Vim with some Quality of Life plugins.
 
+<div align="center">
+<img src=".img/setup.png" width="85%">
+</div>
+
 ## Required tools
 
 ```bash
