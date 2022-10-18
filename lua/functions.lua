@@ -45,11 +45,11 @@ function M.on_attach(client, bufnr)
 				k = { "<cmd>lua vim.lsp.buf.hover()<cr>", "LSP: Hover Commands" },
 				l = { "<cmd>lua vim.diagnostic.open_float()<cr>", "LSP: Line Diagnostics" },
 			},
+			-- workspace
 			w = {
 				name = "LSP: Workspace",
 				a = {
-					"<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>",
-					"LSP: Add Workspace Folder",
+					"<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", "LSP: Add Workspace Folder",
 				},
 				d = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 				l = {
