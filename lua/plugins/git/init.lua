@@ -197,6 +197,7 @@ wk.register({
 		D = { "<cmd>Gitsigns diffthis ~<CR>", "Gitsigns: Diff this against last commit", noremap = true },
 
 		-- search
+
 		-- h = { "<cmd>Telescope git_branches<CR>", "Gitsigns: Switch Branches", noremap = true },
 		-- m = { "<cmd>Telescope git_commits<CR>", "Search Commits", noremap = true },
 		-- M = { "<cmd>Telescope git_bcommits<CR>", "Search Buffer Commits", noremap = true },
