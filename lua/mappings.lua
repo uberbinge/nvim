@@ -13,6 +13,7 @@ end
 -- map strg + c to esc to automatically toggle relative line numbers
 vim.keymap.set("i", "<C-c>", "<esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", "<esc>", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-c>", "<esc>", { noremap = true, silent = true })
 
 -- deactivate arrow keys in normal mode
 vim.keymap.set("n", "<up>", "<nop>", { noremap = true, silent = true })
