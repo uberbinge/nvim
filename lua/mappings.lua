@@ -3,9 +3,14 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
 -- greatest remap ever
+-- speedy mode
+for _, mode in ipairs { "v", "n" } do
+	vim.keymap.set(mode, "<leader>p", "\"_dP", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<C-j>", "5j", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<C-k>", "5k", { noremap = true, silent = true })
+end
 
-
--- map strg + c to esc to automatically toggle relative linenumbers
+-- map strg + c to esc to automatically toggle relative line numbers
 vim.keymap.set("i", "<C-c>", "<esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", "<esc>", { noremap = true, silent = true })
 
