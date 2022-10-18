@@ -50,11 +50,9 @@ font:
   normal:
     family: Hack Nerd Font Mono
     style: Regular
-
   bold:
     family: Hack Nerd Font Mono
     style: Bold
-
   italic:
     family: Hack Nerd Font Mono
     style: Italic
