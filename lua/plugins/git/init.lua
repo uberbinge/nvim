@@ -3,7 +3,8 @@ local packer = require("packer")
 packer.use({
 	"lewis6991/gitsigns.nvim",
 	config = function()
-		require("gitsigns").setup {
+		local gs = require("gitsigns")
+		gs.setup {
 			keymaps = {
 				-- Default keymap options
 				noremap = false
@@ -64,12 +65,65 @@ packer.use({
 			diff_opts = { internal = true },
 			yadm = { enable = false }
 		}
+
+		local wk = require("which-key")
+		-- normal mode
+		wk.register({
+			-- gitsigns
+			h = {
+				name = "Gitsigns",
+				j = { function()
+					if vim.wo.diff then
+						return "]c"
+					end
+					vim.schedule(function()
+						gs.next_hunk()
+					end)
+					return "<Ignore>"
+				end,
+					"Next Hunk", noremap = true },
+				k = { function()
+					if vim.wo.diff then
+						return "[c"
+					end
+					vim.schedule(function()
+						gs.prev_hunk()
+					end)
+					return "<Ignore>"
+				end,
+					"Previous Hunk", noremap = true },
+				-- stage
+				s = { "<cmd>Gitsigns stage_hunk<CR>", "Gitsigns: Stage Hunk", silent = true },
+				S = { "<cmd>Gitsigns stage_buffer<CR>", "Gitsigns: Stage Buffer", noremap = true },
+				-- undo
+				u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage Hunk", noremap = true },
+				U = { "<cmd>Gitsigns undo_stage_buffer<CR>", "Unstage Buffer", noremap = true },
+				-- reset
+				r = { "<cmd>Gitsigns reset_hunk<CR>", "Gitsigns: Reset Hunk", noremap = true },
+				R = { "<cmd>Gitsigns reset_buffer<CR>", "Gitsigns: Reset Buffer", noremap = true },
+				-- blame
+				b = { "<cmd>Gitsigns blame_line<CR>", "Gitsigns: Toggle Blame", noremap = true },
+				-- toggle
+				t = {
+					b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Gitsigns: Toggle Blame", noremap = true },
+					d = { "<cmd>Gitsigns toggle_deleted<CR>", "Gitsigns: Toggle deleted", noremap = true },
+				},
+				-- preview
+				p = { "<cmd>Gitsigns preview_hunk<CR>", "Gitsigns: Preview Hunk", noremap = true },
+				-- diff
+				d = { "<cmd>Gitsigns diffthis<CR>", "Gitsigns: Diff this", noremap = true },
+				D = { "<cmd>Gitsigns diffthis ~<CR>", "Gitsigns: Diff this against last commit", noremap = true },
+			},
+		}, {
+			mode = "n",
+			prefix = "<leader>",
+		})
 	end,
 })
 
 packer.use({
 	"TimUntersberger/neogit",
-	requires = { "nvim-lua/plenary.nvim" },
+	requires = { "tpope/vim-fugitive", "nvim-lua/plenary.nvim" },
 	config = function()
 		require("neogit").setup {
 			disable_signs = false,
@@ -98,105 +152,54 @@ packer.use({
 				}
 			}
 		}
+
+		local wk = require("which-key")
+		wk.register({
+			-- tpope/vim-fugitive and TimUntersberger/neogit
+			g = {
+				name = "Git",
+				-- git add
+				A = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
+				a = {
+					name = "Git Add",
+					a = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
+					f = { "<cmd>Git add :%<CR>", "Git: Add file", noremap = true },
+				},
+				-- git commit
+				C = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
+				c = {
+					name = "Git Commit",
+					c = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
+					a = { "<cmd>Git commit --verbose --all<CR>", "Git: Commit (all)", noremap = true },
+					A = { "<cmd>Git commit --verbose --ammend<CR>", "Git: Commit (ammend)", noremap = true },
+				},
+				-- git log
+				L = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
+				l = {
+					name = "Git Log",
+					l = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
+					L = { "<cmd>tabnew | Gclog<CR>", "Git: Log (Tab)", noremap = true },
+				},
+				-- git push-pull
+				p = {
+					name = "Git Push/Pull",
+					a = { "<cmd>Git push --all<CR>", "Git: Push all", noremap = true },
+					p = { "<cmd>Git push --all<CR>", "Git: Push", noremap = true },
+					l = { "<cmd>Git pull<CR>", "Git: Pull", noremap = true },
+				},
+				-- git status
+				S = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+				s = {
+					name = "Git Status",
+					s = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+					t = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+				},
+				-- git reset
+				R = { "<cmd>Git reset<CR>", "Git: Reset", noremap = true },
+			},
+		}, {
+			mode = "n",
+			prefix = "<leader>",
+		})
 	end,
-	cmd = "Neogit",
-})
-
-packer.use({ "tpope/vim-fugitive" })
-
-local wk = require("which-key")
-local gitsigns = require("gitsigns")
-
--- normal mode
-wk.register({
-	-- tpope/vim-fugitive and TimUntersberger/neogit
-	g = {
-		name = "Git",
-		-- git add
-		A = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
-		a = {
-			name = "Git Add",
-			a = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
-			f = { "<cmd>Git add :%<CR>", "Git: Add file", noremap = true },
-		},
-		-- git commit
-		C = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
-		c = {
-			name = "Git Commit",
-			c = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
-			a = { "<cmd>Git commit --verbose --all<CR>", "Git: Commit (all)", noremap = true },
-			A = { "<cmd>Git commit --verbose --ammend<CR>", "Git: Commit (ammend)", noremap = true },
-		},
-		-- git log
-		L = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
-		l = {
-			name = "Git Log",
-			l = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
-			L = { "<cmd>tabnew | Gclog<CR>", "Git: Log (Tab)", noremap = true },
-		},
-		-- git push-pull
-		p = {
-			name = "Git Push/Pull",
-			a = { "<cmd>Git push --all<CR>", "Git: Push all", noremap = true },
-			p = { "<cmd>Git push --all<CR>", "Git: Push", noremap = true },
-			l = { "<cmd>Git pull<CR>", "Git: Pull", noremap = true },
-		},
-		-- git status
-		S = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
-		s = {
-			name = "Git Status",
-			s = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
-			t = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
-		},
-		-- git reset
-		R = { "<cmd>Git reset<CR>", "Git: Reset", noremap = true }
-	},
-	-- gitsigns
-	h = {
-		name = "Gitsigns",
-		j = { function()
-			if vim.wo.diff then
-				return "]c"
-			end
-			vim.schedule(function()
-				gitsigns.next_hunk()
-			end)
-			return "<Ignore>"
-		end,
-			"Next Hunk", noremap = true },
-		k = { function()
-			if vim.wo.diff then
-				return "[c"
-			end
-			vim.schedule(function()
-				gitsigns.prev_hunk()
-			end)
-			return "<Ignore>"
-		end,
-			"Previous Hunk", noremap = true },
-		-- stage
-		s = { "<cmd>Gitsigns stage_hunk<CR>", "Gitsigns: Stage Hunk", silent = true },
-		S = { "<cmd>Gitsigns stage_buffer<CR>", "Gitsigns: Stage Buffer", noremap = true },
-		-- undo
-		u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage Hunk", noremap = true },
-		U = { "<cmd>Gitsigns undo_stage_buffer<CR>", "Unstage Buffer", noremap = true },
-		-- reset
-		r = { "<cmd>Gitsigns reset_hunk<CR>", "Gitsigns: Reset Hunk", noremap = true },
-		R = { "<cmd>Gitsigns reset_buffer<CR>", "Gitsigns: Reset Buffer", noremap = true },
-		-- blame
-		b = { "<cmd>Gitsigns blame_line<CR>", "Gitsigns: Toggle Blame", noremap = true },
-		-- toggle
-		t = {
-			b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Gitsigns: Toggle Blame", noremap = true },
-			d = { "<cmd>Gitsigns toggle_deleted<CR>", "Gitsigns: Toggle deleted", noremap = true },
-		},
-		-- preview
-		p = { "<cmd>Gitsigns preview_hunk<CR>", "Gitsigns: Preview Hunk", noremap = true },
-		-- diff
-		d = { "<cmd>Gitsigns diffthis<CR>", "Gitsigns: Diff this", noremap = true },
-		D = { "<cmd>Gitsigns diffthis ~<CR>", "Gitsigns: Diff this against last commit", noremap = true },
-	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
 })
