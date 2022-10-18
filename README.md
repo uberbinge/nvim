@@ -34,6 +34,32 @@ brew install ripgrep
 * toggleterm
 * which-key
 
+## Terminal
+
+This setup works well with the following `Alacritty` terminal config
+
+```yaml
+colors:
+  primary:
+    background: '#1F1F28'
+window:
+  opacity: 0.98
+  decorations: none
+font:
+  size: 14
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+```
+
 ## Acknowledgements
 
 Special Thanks to the following people:
