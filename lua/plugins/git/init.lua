@@ -109,7 +109,6 @@ local gitsigns = require("gitsigns")
 
 -- normal mode
 wk.register({
-
 	-- tpope/vim-fugitive and TimUntersberger/neogit
 	g = {
 		name = "Git",
@@ -152,6 +151,7 @@ wk.register({
 		-- git reset
 		R = { "<cmd>Git reset<CR>", "Git: Reset", noremap = true }
 	},
+	-- gitsigns
 	h = {
 		name = "Gitsigns",
 		j = { function()
