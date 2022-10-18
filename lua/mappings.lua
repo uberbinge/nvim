@@ -2,6 +2,9 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
+-- greatest remap ever
+
+
 -- map strg + c to esc to automatically toggle relative linenumbers
 vim.keymap.set("i", "<C-c>", "<esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", "<esc>", { noremap = true, silent = true })

@@ -102,13 +102,58 @@ packer.use({
 	cmd = "Neogit",
 })
 
+packer.use({ "tpope/vim-fugitive" })
+
 local wk = require("which-key")
 local gitsigns = require("gitsigns")
 
 -- normal mode
 wk.register({
+
+	-- tpope/vim-fugitive and TimUntersberger/neogit
 	g = {
 		name = "Git",
+		-- git add
+		A = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
+		a = {
+			name = "Git Add",
+			a = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
+			f = { "<cmd>Git add :%<CR>", "Git: Add file", noremap = true },
+		},
+		-- git commit
+		C = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
+		c = {
+			name = "Git Commit",
+			c = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
+			a = { "<cmd>Git commit --verbose --all<CR>", "Git: Commit (all)", noremap = true },
+			A = { "<cmd>Git commit --verbose --ammend<CR>", "Git: Commit (ammend)", noremap = true },
+		},
+		-- git log
+		L = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
+		l = {
+			name = "Git Log",
+			l = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
+			L = { "<cmd>tabnew | Gclog<CR>", "Git: Log (Tab)", noremap = true },
+		},
+		-- git push-pull
+		p = {
+			name = "Git Push/Pull",
+			a = { "<cmd>Git push --all<CR>", "Git: Push all", noremap = true },
+			p = { "<cmd>Git push --all<CR>", "Git: Push", noremap = true },
+			l = { "<cmd>Git pull<CR>", "Git: Pull", noremap = true },
+		},
+		-- git status
+		S = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+		s = {
+			name = "Git Status",
+			s = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+			t = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+		},
+		-- git reset
+		R = { "<cmd>Git reset<CR>", "Git: Reset", noremap = true }
+	},
+	h = {
+		name = "Gitsigns",
 		j = { function()
 			if vim.wo.diff then
 				return "]c"
@@ -129,22 +174,34 @@ wk.register({
 			return "<Ignore>"
 		end,
 			"Previous Hunk", noremap = true },
-		h = { "<cmd>Telescope git_branches<CR>", "Switch Branches", noremap = true },
-		c = { "<cmd>Neogit commit %<CR>", "Commit", noremap = true },
-		P = { "<cmd>Neogit push<CR>", "Push", noremap = true },
-		m = { "<cmd>Telescope git_commits<CR>", "Search Commits", noremap = true },
-		M = { "<cmd>Telescope git_bcommits<CR>", "Search Buffer Commits", noremap = true },
-		G = { "<cmd>Telescope git_status<CR>", "Search Git Status", noremap = true },
-		s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage Hunk", silent = true },
-		R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer", noremap = true },
-		r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset Hunk", noremap = true },
+		-- stage
+		s = { "<cmd>Gitsigns stage_hunk<CR>", "Gitsigns: Stage Hunk", silent = true },
+		S = { "<cmd>Gitsigns stage_buffer<CR>", "Gitsigns: Stage Buffer", noremap = true },
+		-- undo
 		u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage Hunk", noremap = true },
 		U = { "<cmd>Gitsigns undo_stage_buffer<CR>", "Unstage Buffer", noremap = true },
-		S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer", noremap = true },
-		p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk", noremap = true },
-		i = { "<cmd>Gitsigns toggle_deleted<CR>", "Toggle deleted", noremap = true },
-		b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle Blame", noremap = true },
-		g = { "<cmd>Neogit<CR>", "Toggle Neogit", noremap = true },
+		-- reset
+		r = { "<cmd>Gitsigns reset_hunk<CR>", "Gitsigns: Reset Hunk", noremap = true },
+		R = { "<cmd>Gitsigns reset_buffer<CR>", "Gitsigns: Reset Buffer", noremap = true },
+		-- blame
+		b = { "<cmd>Gitsigns blame_line<CR>", "Gitsigns: Toggle Blame", noremap = true },
+		-- toggle
+		t = {
+			b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Gitsigns: Toggle Blame", noremap = true },
+			d = { "<cmd>Gitsigns toggle_deleted<CR>", "Gitsigns: Toggle deleted", noremap = true },
+		},
+		-- preview
+		p = { "<cmd>Gitsigns preview_hunk<CR>", "Gitsigns: Preview Hunk", noremap = true },
+		-- diff
+		d = { "<cmd>Gitsigns diffthis<CR>", "Gitsigns: Diff this", noremap = true },
+		D = { "<cmd>Gitsigns diffthis ~<CR>", "Gitsigns: Diff this against last commit", noremap = true },
+
+		-- search
+		-- h = { "<cmd>Telescope git_branches<CR>", "Gitsigns: Switch Branches", noremap = true },
+		-- m = { "<cmd>Telescope git_commits<CR>", "Search Commits", noremap = true },
+		-- M = { "<cmd>Telescope git_bcommits<CR>", "Search Buffer Commits", noremap = true },
+		-- G = { "<cmd>Telescope git_status<CR>", "Search Git Status", noremap = true },
+		-- g = { "<cmd>Neogit<CR>", "Toggle Neogit", noremap = true },
 	},
 }, {
 	mode = "n",
