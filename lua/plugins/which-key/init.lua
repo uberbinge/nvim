@@ -45,15 +45,9 @@ packer.use({
 			},
 			m = {
 				name = "Misc",
-				d = { "<cmd>lua require('functions').toggle_diagnostics()<cr>", "Toggle Diagnostics" },
+				w = { "<cmd>cd %:p:h<cr><cmd>pwd<cr>", "Change to directory of current file", noremap = true },
 				o = { "Options" },
 				p = { "<cmd>PackerSync --preview<cr>", "PackerSync" },
-			},
-			q = {
-				name = "Quickfix",
-				j = { "<cmd>cnext<cr>", "Next Quickfix Item" },
-				k = { "<cmd>cprevious<cr>", "Previous Quickfix Item" },
-				q = { "<cmd>lua require('functions').toggle_qf()<cr>", "Toggle quickfix list" },
 			},
 			s = {
 				name = "Search", -- optional group name
