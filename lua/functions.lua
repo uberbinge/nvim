@@ -3,13 +3,13 @@ local M = {}
 -- Global callback functions for LSP shortcuts
 function M.on_attach(client, bufnr)
 	vim.notify("connecting '" .. client.name .. "' to buffer " .. bufnr, vim.log.levels.DEBUG)
-	-- vim.notify(vim.inspect(client.server_capabilities), vim.log.levels.DEBUG)
 
 	-- Format document
 	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			callback = function()
-				vim.lsp.buf.formatting_sync({}, 500)
+				vim.lsp.buf.format({})
+				-- todo(cbrgm): lsp clients needs a restart when doing go development, figure out a solution..
 				-- vim.cmd("LspRestart")
 			end,
 			buffer = 0,
