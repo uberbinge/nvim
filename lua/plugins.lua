@@ -1,3 +1,16 @@
+-- bootstrap packer if not installed
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	vim.fn.system({
+		"git",
+		"clone",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	print("Installing packer...")
+	vim.api.nvim_command("packadd packer.nvim")
+end
+
 -- Initialize packer on start
 -- must be called before everything else /cite janxyz
 local packer = require("packer")
