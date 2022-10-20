@@ -18,7 +18,6 @@ packer.use({
 		-- Register all leader based mappings
 		wk.register({
 			["<Tab>"] = { "<cmd>e#<cr>", "Prev buffer" },
-			["t"] = { "<cmd>ToggleTerm<cr>", "Terminal" },
 			b = {
 				name = "Buffers",
 				b = {
