@@ -23,7 +23,7 @@ function M.on_attach(client, bufnr)
 			name = "LSP",
 			R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP: Rename" },
 			A = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP: Code Action" },
-			F = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "LSP: Format" },
+			F = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "LSP: Format" },
 			I = { "<cmd>LspInfo<cr>", "LSP: Connected Language Servers" },
 			X = { "<cmd>LspRestart<cr>", "LSP: Restart LSP Client" },
 			-- goto

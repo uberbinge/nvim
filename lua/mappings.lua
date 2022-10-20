@@ -15,9 +15,13 @@ vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 -- greatest remap ever
 -- speedy mode
 for _, mode in ipairs { "v", "n" } do
-	vim.keymap.set(mode, "<C-j>", "5j", { noremap = true, silent = true })
-	vim.keymap.set(mode, "<C-k>", "5k", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<S-j>", "5j", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<S-k>", "5k", { noremap = true, silent = true })
 end
+-- fix the remove linebreak key combo e.g. shift + J -> strg + J
+vim.keymap.set("v", "<C-j>", "J", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-L>", ":bnext<cr>", { noremap = true })
+vim.keymap.set("n", "<S-H>", ":bprevious<cr>", { noremap = true })
 
 -- map strg + c to esc to automatically toggle relative line numbers
 vim.keymap.set("i", "<C-c>", "<esc>", { noremap = true, silent = true })
