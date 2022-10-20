@@ -72,7 +72,7 @@ packer.use({
 			-- gitsigns
 			h = {
 				name = "Gitsigns",
-				j = { function()
+				k = { function()
 					if vim.wo.diff then
 						return "]c"
 					end
@@ -81,8 +81,8 @@ packer.use({
 					end)
 					return "<Ignore>"
 				end,
-					"Next Hunk", noremap = true },
-				k = { function()
+					"Next Hunk" },
+				j = { function()
 					if vim.wo.diff then
 						return "[c"
 					end
@@ -91,28 +91,28 @@ packer.use({
 					end)
 					return "<Ignore>"
 				end,
-					"Previous Hunk", noremap = true },
+					"Previous Hunk" },
 				-- stage
 				s = { "<cmd>Gitsigns stage_hunk<CR>", "Gitsigns: Stage Hunk", silent = true },
-				S = { "<cmd>Gitsigns stage_buffer<CR>", "Gitsigns: Stage Buffer", noremap = true },
+				S = { "<cmd>Gitsigns stage_buffer<CR>", "Gitsigns: Stage Buffer" },
 				-- undo
-				u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage Hunk", noremap = true },
-				U = { "<cmd>Gitsigns undo_stage_buffer<CR>", "Unstage Buffer", noremap = true },
+				u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage Hunk" },
+				U = { "<cmd>Gitsigns undo_stage_buffer<CR>", "Unstage Buffer" },
 				-- reset
-				r = { "<cmd>Gitsigns reset_hunk<CR>", "Gitsigns: Reset Hunk", noremap = true },
-				R = { "<cmd>Gitsigns reset_buffer<CR>", "Gitsigns: Reset Buffer", noremap = true },
+				r = { "<cmd>Gitsigns reset_hunk<CR>", "Gitsigns: Reset Hunk" },
+				R = { "<cmd>Gitsigns reset_buffer<CR>", "Gitsigns: Reset Buffer" },
 				-- blame
-				b = { "<cmd>Gitsigns blame_line<CR>", "Gitsigns: Toggle Blame", noremap = true },
+				b = { "<cmd>Gitsigns blame_line<CR>", "Gitsigns: Toggle Blame" },
 				-- toggle
 				t = {
-					b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Gitsigns: Toggle Blame", noremap = true },
-					d = { "<cmd>Gitsigns toggle_deleted<CR>", "Gitsigns: Toggle deleted", noremap = true },
+					b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Gitsigns: Toggle Blame" },
+					d = { "<cmd>Gitsigns toggle_deleted<CR>", "Gitsigns: Toggle deleted" },
 				},
 				-- preview
-				p = { "<cmd>Gitsigns preview_hunk<CR>", "Gitsigns: Preview Hunk", noremap = true },
+				p = { "<cmd>Gitsigns preview_hunk<CR>", "Gitsigns: Preview Hunk" },
 				-- diff
-				d = { "<cmd>Gitsigns diffthis<CR>", "Gitsigns: Diff this", noremap = true },
-				D = { "<cmd>Gitsigns diffthis ~<CR>", "Gitsigns: Diff this against last commit", noremap = true },
+				d = { "<cmd>Gitsigns diffthis<CR>", "Gitsigns: Diff this" },
+				D = { "<cmd>Gitsigns diffthis ~<CR>", "Gitsigns: Diff this against last commit" },
 			},
 		}, {
 			mode = "n",
@@ -159,43 +159,43 @@ packer.use({
 			g = {
 				name = "Git",
 				-- git add
-				A = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
+				A = { "<cmd>Git add --all<CR>", "Git: Add all" },
 				a = {
 					name = "Git Add",
-					a = { "<cmd>Git add --all<CR>", "Git: Add all", noremap = true },
-					f = { "<cmd>Git add :%<CR>", "Git: Add file", noremap = true },
+					a = { "<cmd>Git add --all<CR>", "Git: Add all" },
+					f = { "<cmd>Git add :%<CR>", "Git: Add file" },
 				},
 				-- git commit
-				C = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
+				C = { "<cmd>Git commit --verbose<CR>", "Git: Commit" },
 				c = {
 					name = "Git Commit",
-					c = { "<cmd>Git commit --verbose<CR>", "Git: Commit", noremap = true },
-					a = { "<cmd>Git commit --verbose --all<CR>", "Git: Commit (all)", noremap = true },
-					A = { "<cmd>Git commit --verbose --ammend<CR>", "Git: Commit (ammend)", noremap = true },
+					c = { "<cmd>Git commit --verbose<CR>", "Git: Commit" },
+					a = { "<cmd>Git commit --verbose --all<CR>", "Git: Commit (all)" },
+					A = { "<cmd>Git commit --verbose --ammend<CR>", "Git: Commit (ammend)" },
 				},
 				-- git log
-				L = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
+				L = { "<cmd>Gclog!<CR>", "Git: Log" },
 				l = {
 					name = "Git Log",
-					l = { "<cmd>Gclog!<CR>", "Git: Log", noremap = true },
-					L = { "<cmd>tabnew | Gclog<CR>", "Git: Log (Tab)", noremap = true },
+					l = { "<cmd>Gclog!<CR>", "Git: Log" },
+					L = { "<cmd>tabnew | Gclog<CR>", "Git: Log (Tab)" },
 				},
 				-- git push-pull
 				p = {
 					name = "Git Push/Pull",
-					a = { "<cmd>Git push --all<CR>", "Git: Push all", noremap = true },
-					p = { "<cmd>Git push --all<CR>", "Git: Push", noremap = true },
-					l = { "<cmd>Git pull<CR>", "Git: Pull", noremap = true },
+					a = { "<cmd>Git push --all<CR>", "Git: Push all" },
+					p = { "<cmd>Git push --all<CR>", "Git: Push" },
+					l = { "<cmd>Git pull<CR>", "Git: Pull" },
 				},
 				-- git status
-				S = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+				S = { "<cmd>Neogit<CR>", "Git: Status" },
 				s = {
 					name = "Git Status",
-					s = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
-					t = { "<cmd>Neogit<CR>", "Git: Status", noremap = true },
+					s = { "<cmd>Neogit<CR>", "Git: Status" },
+					t = { "<cmd>Neogit<CR>", "Git: Status" },
 				},
 				-- git reset
-				R = { "<cmd>Git reset<CR>", "Git: Reset", noremap = true },
+				R = { "<cmd>Git reset<CR>", "Git: Reset" },
 			},
 		}, {
 			mode = "n",

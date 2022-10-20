@@ -29,7 +29,7 @@ packer.use({
 					"Close all but the current buffer",
 				},
 				d = { "<cmd>bd<CR>", "Close buffer" },
-				f = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer", noremap = true },
+				f = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer" },
 
 			},
 			f = {
@@ -44,18 +44,18 @@ packer.use({
 			},
 			m = {
 				name = "Misc",
-				w = { "<cmd>cd %:p:h<cr><cmd>pwd<cr>", "Change to directory of current file", noremap = true },
+				w = { "<cmd>cd %:p:h<cr><cmd>pwd<cr>", "Change to directory of current file" },
 				o = { "Options" },
 				p = { "<cmd>PackerSync --preview<cr>", "PackerSync" },
 			},
 			s = {
 				name = "Search", -- optional group name
-				f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File", noremap = true },
-				g = { "<cmd>Telescope live_grep<cr>", "Find in File", noremap = true },
-				o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap = true },
-				r = { "<cmd>Telescope resume<cr>", "Resume last picker", noremap = true },
-				p = { "<cmd>Telescope pickers<cr>", "List all pickers", noremap = true },
-				b = { "<cmd>Telescope buffers<cr>", "List open buffers", noremap = true },
+				f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
+				g = { "<cmd>Telescope live_grep<cr>", "Find in File" },
+				o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+				r = { "<cmd>Telescope resume<cr>", "Resume last picker" },
+				p = { "<cmd>Telescope pickers<cr>", "List all pickers" },
+				b = { "<cmd>Telescope buffers<cr>", "List open buffers" },
 			},
 		}, { prefix = "<leader>", mode = "n", default_options })
 	end,
