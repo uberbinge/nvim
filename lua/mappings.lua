@@ -15,7 +15,6 @@ vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 -- greatest remap ever
 -- speedy mode
 for _, mode in ipairs { "v", "n" } do
-	vim.keymap.set(mode, "<leader>p", "\"_dP", { noremap = true, silent = true })
 	vim.keymap.set(mode, "<C-j>", "5j", { noremap = true, silent = true })
 	vim.keymap.set(mode, "<C-k>", "5k", { noremap = true, silent = true })
 end
