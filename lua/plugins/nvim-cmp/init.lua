@@ -24,7 +24,6 @@ packer.use({
 			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 		end
 		-- end
-
 		local cmp = require("cmp")
 		cmp.setup({
 			snippet = {
@@ -66,7 +65,6 @@ packer.use({
 				-- end
 			},
 		})
-
 		cmp.setup.cmdline("/", {
 			sources = {
 				{ name = "buffer" },
