@@ -6,6 +6,19 @@ packer.use({
 		{ "nvim-lua/popup.nvim" },
 		{ "nvim-lua/plenary.nvim" },
 		{ "folke/which-key.nvim" },
+		{ "ahmedkhalf/project.nvim",
+			config = function()
+				require("project_nvim").setup({
+					detection_methods = { "pattern" },
+					patterns = {
+						".git",
+						".project",
+						"go.mod",
+						".terraform",
+					}
+				})
+			end,
+		},
 		{ "nvim-telescope/telescope-file-browser.nvim" }
 	},
 	config = function()
@@ -18,6 +31,7 @@ packer.use({
 				file_browser = {
 					hijack_netrw = true,
 					hidden = true,
+					theme = "ivy",
 					mappings = {
 						i = {
 							["<c-n>"] = fb_actions.create,
@@ -31,15 +45,28 @@ packer.use({
 						},
 					},
 				},
-
+				projects = {
+					theme = "ivy",
+				},
 			},
 			pickers = {
 				find_files = {
 					hidden = true,
+					theme = "ivy",
 				},
 				buffers = {
 					ignore_current_buffer = true,
 					sort_lastused = true,
+					theme = "ivy",
+				},
+				live_grep = {
+					theme = "ivy",
+				},
+				oldfiles = {
+					theme = "ivy",
+				},
+				projects = {
+					theme = "ivy",
 				},
 			},
 			defaults = {
@@ -124,5 +151,7 @@ packer.use({
 			},
 		})
 		telescope.load_extension "file_browser"
+		telescope.load_extension "projects"
+
 	end,
 })

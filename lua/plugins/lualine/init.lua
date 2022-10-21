@@ -4,6 +4,9 @@ packer.use({
 	"nvim-lualine/lualine.nvim",
 	requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	config = function()
+		local pwd = function()
+			return vim.fn.getcwd()
+		end
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
@@ -26,7 +29,7 @@ packer.use({
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "filename" },
+				lualine_c = { pwd, "filename" },
 				lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" }
