@@ -13,6 +13,9 @@ packer.use({
 		"hrsh7th/vim-vsnip",
 	},
 	config = function()
+
+		-- set a custom snippet dir
+		vim.g.vsnip_snippet_dir = vim.fn.expand("~/.config/nvim/vsnip")
 		-- helpers for jumping between snippet fields
 		-- based on nvim-cmp wiki
 		local has_words_before = function()
