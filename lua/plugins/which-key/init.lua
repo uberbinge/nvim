@@ -25,7 +25,7 @@ packer.use({
 					"<cmd>Telescope buffers<cr>",
 					"Find buffer (All)",
 				},
-				d = { "<cmd>bd<CR>", "Close buffer" },
+				d = { "<cmd>bd!<CR>", "Close buffer" },
 				D = {
 					"<cmd>%bd|e#|bd#<cr>",
 					"Close all but the current buffer",
