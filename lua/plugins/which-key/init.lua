@@ -11,10 +11,6 @@ packer.use({
 			},
 		})
 
-		-- global keymaps
-
-		local default_options = { silent = true }
-
 		-- Register all leader based mappings
 		wk.register({
 			["<Tab>"] = { "<cmd>e#<cr>", "Prev buffer" },
@@ -35,7 +31,6 @@ packer.use({
 					"Close all but the current buffer",
 				},
 				f = { "<cmd>Neotree action=focus reveal=true<CR>", "Find file in file explorer" },
-
 			},
 			f = {
 				name = "Files",
@@ -49,11 +44,11 @@ packer.use({
 			m = {
 				name = "Misc",
 				w = { "<cmd>cd %:p:h<cr><cmd>pwd<cr>", "Change to directory of current file" },
-				o = { "Options" },
 				p = { "<cmd>PackerSync --preview<cr>", "PackerSync" },
 			},
 			s = {
 				name = "Search", -- optional group name
+				s = { "<cmd>Telescope <cr>", "Search" },
 				f = { "<cmd>Telescope find_files hidden=true<cr>", "Find File" },
 				g = { "<cmd>Telescope live_grep<cr>", "Find in File" },
 				o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
@@ -61,6 +56,6 @@ packer.use({
 				p = { "<cmd>Telescope projects<cr>", "List all projects" },
 				b = { "<cmd>Telescope buffers<cr>", "List open buffers" },
 			},
-		}, { prefix = "<leader>", mode = "n", default_options })
+		}, { prefix = "<leader>", mode = "n", { silent = true } })
 	end,
 })

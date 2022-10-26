@@ -123,8 +123,8 @@ packer.use({
 				initial_mode = "insert",
 				scroll_strategy = "cycle",
 				selection_strategy = "reset",
-				sorting_strategy = "descending",
-				layout_strategy = "horizontal",
+				sorting_strategy = "ascending",
+				layout_strategy = "center",
 				layout_config = {
 					width = 0.95,
 					height = 0.85,
