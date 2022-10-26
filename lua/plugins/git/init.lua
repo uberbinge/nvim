@@ -125,7 +125,8 @@ packer.use({
 	"TimUntersberger/neogit",
 	requires = { "tpope/vim-fugitive", "nvim-lua/plenary.nvim" },
 	config = function()
-		require("neogit").setup {
+		local neogit = require("neogit")
+		neogit.setup {
 			disable_signs = false,
 			disable_context_highlighting = false,
 			disable_commit_confirmation = false,
@@ -191,8 +192,8 @@ packer.use({
 				S = { "<cmd>Neogit<CR>", "Git: Status" },
 				s = {
 					name = "Git Status",
-					s = { "<cmd>Neogit<CR>", "Git: Status" },
-					t = { "<cmd>Neogit<CR>", "Git: Status" },
+					s = { neogit.open, "Git: Status" },
+					t = { neogit.open, "Git: Status" },
 				},
 				-- git reset
 				R = { "<cmd>Git reset<CR>", "Git: Reset" },
